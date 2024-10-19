@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentual de Acertos e Erros</title>
+</head>
+<body>
+    <h1>Percentual de Acertos e Erros</h1>
+    <form id="scoreForm">
+        <label for="total">Número total de questões:</label>
+        <input type="number" id="total" required>
+        <br>
+        <label for="acertos">Número de questões acertadas:</label>
+        <input type="number" id="acertos" required>
+        <br>
+        <button type="button" onclick="calcular()">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function calcular() {
+            const total = parseInt(document.getElementById('total').value);
+            const acertos = parseInt(document.getElementById('acertos').value);
+            const erros = total - acertos;
+            const percentAcertos = ((acertos / total) * 100).toFixed(2);
+            const percentErros = ((erros / total) * 100).toFixed(2);
+            document.getElementById('resultado').innerText = 
+                `Percentual de acertos: ${percentAcertos}%\nPercentual de erros: ${percentErros}%`;
+        }
+    </script>
+</body>
+</html>
 
