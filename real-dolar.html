@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Real para Dólar</title>
+</head>
+<body>
+    <h1>Conversão de Real para Dólar</h1>
+    <form id="conversionForm">
+        <label for="reais">Valor em Reais (R$):</label>
+        <input type="number" id="reais" required>
+        <br>
+        <label for="cotacao">Cotação atual do Dólar:</label>
+        <input type="number" id="cotacao" required>
+        <br>
+        <button type="button" onclick="converter()">Converter</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function converter() {
+            const reais = parseFloat(document.getElementById('reais').value);
+            const cotacao = parseFloat(document.getElementById('cotacao').value);
+            const dolares = (reais / cotacao).toFixed(2);
+            document.getElementById('resultado').innerText = `O valor em dólares é $${dolares}`;
+        }
+    </script>
+</body>
+</html>
 
