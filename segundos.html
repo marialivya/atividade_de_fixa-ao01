@@ -1,1 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversão de Segundos</title>
+</head>
+<body>
+    <h1>Conversão de Segundos para Horas, Minutos e Segundos</h1>
+    <form id="timeForm">
+        <label for="segundos">Digite o valor em segundos:</label>
+        <input type="number" id="segundos" required>
+        <br>
+        <button type="button" onclick="converter()">Converter</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        function converter() {
+            const segundosTotais = parseInt(document.getElementById('segundos').value);
+            const horas = Math.floor(segundosTotais / 3600);
+            const minutos = Math.floor((segundosTotais % 3600) / 60);
+            const segundos = segundosTotais % 60;
+            document.getElementById('resultado').innerText = 
+                `${horas} horas, ${minutos} minutos e ${segundos} segundos`;
+        }
+    </script>
+</body>
+</html>
 
